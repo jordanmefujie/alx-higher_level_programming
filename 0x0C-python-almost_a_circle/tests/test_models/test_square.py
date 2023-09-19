@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-
+"""Test Square class"""
 
 import unittest
-
+import os
+import pep8
+from models.rectangle import Rectangle
+from models.base import Base
 from models.square import Square
 
 
 
 class TestSquare(unittest.TestCase):
+    """Test class square"""
 
     def test_initialization_success(self):
+        """Initializing class"""
 
         s1 = Square(5)
 
@@ -21,6 +26,7 @@ class TestSquare(unittest.TestCase):
 
 
     def test_initialization_without_arguments(self):
+        """Initializing class without arguments"""
 
 
         self.assertRaises(TypeError, Square)
