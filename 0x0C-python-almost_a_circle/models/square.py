@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-
-
+"""
+Module that inherites from rectangle models
+"""
 from models.rectangle import Rectangle
 
 
 
 class Square(Rectangle):
+    """Initializiing class square"""
 
     def __init__(self, size, x=0, y=0, id=None):
 
@@ -15,6 +17,7 @@ class Square(Rectangle):
     @property
 
     def size(self):
+        """Gets size"""
 
         return self.width
 
@@ -22,6 +25,7 @@ class Square(Rectangle):
     @size.setter
 
     def size(self, value):
+        """Sets size"""
 
         self.width = value
 
@@ -29,6 +33,7 @@ class Square(Rectangle):
 
 
     def __str__(self):
+        """String representation"""
 
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
 
@@ -40,6 +45,7 @@ class Square(Rectangle):
 
 
     def update(self, *args, **kwargs):
+        """TO update class square"""
 
         if len(args):
 
@@ -71,6 +77,7 @@ class Square(Rectangle):
 
 
     def to_dictionary(self):
+        """Dictionary representation"""
 
         return {
 

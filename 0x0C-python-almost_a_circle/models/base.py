@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+Defines Base model
+"""
 
 import json
 
@@ -10,6 +12,7 @@ import turtle
 
 
 class Base:
+    """intializing class Base"""
 
 
     __nb_objects = 0
@@ -31,6 +34,7 @@ class Base:
     @staticmethod
 
     def to_json_string(list_dictionaries):
+        """Returns a JSON STRING"""
 
         if list_dictionaries is None or list_dictionaries == []:
 
@@ -42,6 +46,7 @@ class Base:
     @classmethod
 
     def save_to_file(cls, list_objs):
+        """Writes JSON string"""
 
         filename = cls.__name__ + ".json"
 
@@ -61,6 +66,7 @@ class Base:
     @staticmethod
 
     def from_json_string(json_string):
+        """Writes JSON representation for string"""
 
         if json_string is None or json_string == "[]":
 
@@ -72,6 +78,7 @@ class Base:
     @classmethod
 
     def create(cls, **dictionary):
+        """Returns instances with all attribute set"""
 
         if dictionary and dictionary != {}:
 
@@ -91,6 +98,7 @@ class Base:
     @classmethod
 
     def load_from_file(cls):
+        """Loads lists of instances from JSOn file"""
 
         filename = str(cls.__name__) + ".json"
 
@@ -110,6 +118,7 @@ class Base:
     @classmethod
 
     def save_to_file_csv(cls, list_objs):
+        """Savs to file cvs"""
 
         filename = cls.__name__ + ".csv"
 
@@ -139,6 +148,7 @@ class Base:
     @classmethod
 
     def load_from_file_csv(cls):
+        """Load from file csv"""
 
         filename = cls.__name__ + ".csv"
 
@@ -170,6 +180,7 @@ class Base:
     @staticmethod
 
     def draw(cls, list_rectangles, list_squares):
+        """Draws shapes of rectangles and squares"""
 
         window = turtle.Screen()
 

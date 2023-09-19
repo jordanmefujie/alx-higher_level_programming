@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-
-
+"""
+Module to import class Base
+"""
 
 from models.base import Base
 
 
 
 class Rectangle(Base):
-
+    """class intialization"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
 
@@ -25,6 +26,7 @@ class Rectangle(Base):
     @property
 
     def width(self):
+        """gets width"""
 
         return self.__width
 
@@ -32,6 +34,7 @@ class Rectangle(Base):
     @width.setter
 
     def width(self, value):
+        """sets width"""
 
         self.setter_validation("width", value)
 
@@ -41,6 +44,7 @@ class Rectangle(Base):
     @property
 
     def height(self):
+        """gets height"""
 
         return self.__height
 
@@ -48,6 +52,7 @@ class Rectangle(Base):
     @height.setter
 
     def height(self, value):
+        """sets height"""
 
         self.setter_validation("height", value)
 
@@ -57,6 +62,7 @@ class Rectangle(Base):
     @property
 
     def x(self):
+        """gets x"""
 
         return self.__x
 
@@ -64,6 +70,7 @@ class Rectangle(Base):
     @x.setter
 
     def x(self, value):
+        """sets x"""
 
         self.setter_validation("x", value)
 
@@ -73,6 +80,7 @@ class Rectangle(Base):
     @property
 
     def y(self):
+        """gets y"""
 
         return self.__y
 
@@ -80,6 +88,7 @@ class Rectangle(Base):
     @y.setter
 
     def y(self, value):
+        """sets y"""
 
         self.setter_validation("y", value)
 
@@ -87,11 +96,13 @@ class Rectangle(Base):
 
 
     def area(self):
+        """Return area of rectangle"""
 
         return (self.height * self.width)
 
 
     def display(self):
+        """Print shape of rectangle with # in stdout"""
 
         rectangle = ""
 
@@ -105,6 +116,7 @@ class Rectangle(Base):
 
 
     def update(self, *args, **kwargs):
+        """A public method that assigns an argument to each attribute"""
 
         if len(args) == 0:
 
@@ -132,6 +144,7 @@ class Rectangle(Base):
 
 
     def to_dictionary(self):
+        """The dictionary representation"""
 
         return {'x': getattr(self, "x"),
 
@@ -147,6 +160,7 @@ class Rectangle(Base):
     @staticmethod
 
     def setter_validation(attribute, value):
+        """At static method"""
 
         if type(value) != int:
 
@@ -164,6 +178,7 @@ class Rectangle(Base):
 
 
     def __str__(self):
+        """Overriding the _str_method"""
 
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
 
