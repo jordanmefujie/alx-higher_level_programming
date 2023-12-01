@@ -13,15 +13,16 @@ if __name__ == "__main__":
     http://0.0.0.0:5000/search_user with the letter as a parameter
     """
     url = 'http://0.0.0.0:5000/search_user'
-    r = requests.get(url)
-    if len(argv) == 2:
-        r = requests.post(url, data={'q': argv[1]})
-    else:
-        r = requests.post(url, data={'q': ""})
+    q = argv[1] if len(argv) > 1 else ""
+
     try:
-        if r.json() == {}:
-            print("No result")
+        response = requests.post(url, data={'q': q})
+        json_data = response.json()
+
+        if json_data:
+            print("[{}] {}".format(json_data.get('id'), json_data.get('name')))
         else:
-            print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
-    except json.JSONDecodeError:
+            print("No result")
+
+    except ValueError:
         print("Not a valid JSON")
