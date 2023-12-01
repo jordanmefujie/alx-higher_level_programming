@@ -18,5 +18,5 @@ if __name__ == "__main__":
     r = requests.get(url, auth=(username, password))
     try:
         print(r.json().get('id'))
-    except:
+    except json.JSONDecodeError:
         pass
